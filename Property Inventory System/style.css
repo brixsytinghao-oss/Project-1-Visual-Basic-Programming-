@@ -1,0 +1,173 @@
+/* ASSETFLOW v1.0 - CORPORATE EDITION 
+    Theme: High-Contrast Solid UI (Inspired by Ample Bills)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap');
+
+/* 1. Global Variables & Ample Palette */
+:root {
+    /* Brand Colors */
+    --primary: #4361ee;
+    --sidebar-dark: #0b0f19;
+    --bg-body: #f0f2f5;           /* Light gray canvas for contrast */
+    --white: #ffffff;
+    
+    /* Solid Card Palette */
+    --card-pink: #e91e63;         /* Total Assets */
+    --card-green: #2ecc71;        /* Available */
+    --card-teal: #1abc9c;         /* In Repair */
+    --card-gray: #7f8c8d;         /* Valuation/Other */
+    
+    /* Utility */
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Layout & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, .sidebar-brand {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+/* 3. Sidebar Navigation */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: var(--sidebar-dark);
+    color: var(--white);
+    position: fixed;
+    padding: 30px 20px;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: #94a3b8 !important;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white) !important;
+}
+
+.nav-link.active {
+    background: var(--primary) !important;
+}
+
+/* 4. Main Content */
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    padding: 40px;
+}
+
+/* 5. Solid Metric Cards (Ample Style) */
+.stat-card {
+    border: none !important;
+    border-radius: 12px;
+    padding: 24px;
+    color: var(--white);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Coloring */
+.stat-card.total { background-color: var(--card-pink) !important; }
+.stat-card.available { background-color: var(--card-green) !important; }
+.stat-card.maintenance { background-color: var(--card-teal) !important; }
+.stat-card.valuation { background-color: var(--card-gray) !important; }
+
+.stat-card h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--white);
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.stat-card i {
+    font-size: 2rem !important;
+    background: rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* 6. Professional Data Tables */
+.inventory-table-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-top: 30px;
+    border: none;
+}
+
+.table thead th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table td {
+    padding: 18px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* 7. Action Buttons */
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(67, 97, 238, 0.2);
+}
+
+.btn-primary:hover {
+    background: #3a0ca3;
+    transform: translateY(-1px);
+}
